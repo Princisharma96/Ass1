@@ -1,12 +1,9 @@
-#############INFORMATION OF A DEFAULT USER#####
+#------------------------------------------------------------------------------------
+#  The Spy_details.py file is meant for a Default user and shall be imported when the
+# user is given the option to continue as a default user or create a new spy user.
+#------------------------------------------------------------------------------------
 
-print("For Default user")
-
-# default status
-current_status_message = None
-# list of default status
-STATUS_MESSAGES = ["Hi, I'm Princi","I'm from New Delhi"]
-
-spy_name="Princi Sharma"
-spy_salutation="Ms."
-
+spy_name = 'James Bond'
+spy_rating = 4.5
+spy_age = 34
+spy_salutation = 'Mr'
