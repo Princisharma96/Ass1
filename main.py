@@ -19,7 +19,9 @@ else:
 
 #####OBJECTIVE 2##########
 
-print("SPYCHAT")
+from menu import start_chat
+
+print("WELCOME TO SPYCHAT")
 
 default_user=input("Do you wish to continue with the default user(Y or N)? ,If No create a new user")
 
@@ -76,5 +78,6 @@ spy_is_online = True
 print("Authentication complete. Welcome " + spy_name + " age: " + str(spy_age) + " and rating of: " + str(spy_rating) + " Proud to have you onboard")
         # age is not eligible
 
-
+#starting the chat application
+start_chat()
 
