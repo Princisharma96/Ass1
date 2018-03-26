@@ -1,21 +1,18 @@
 
 # -------------------------------------------------------------------------------------------------
-#                                             MODULE 2 Objectives
-# -------------------------------------------------------------------------------------------------
-# -------------------------------------------------------------------------------------------------
 # Code for lecture 1 of Spychat dated 19th March 2018
 # -------------------------------------------------------------------------------------------------
-# print('Spy Chat')
+# print('Welcome to Spy Chat')
 # print('Let\'s get started')
-# spy_name = raw_input("What is your spy name?") #to store the name of the spy
+# spy_name = input("What is your spy name?") #to store the name of the spy
 # print('Welcome '+spy_name+'. How are you?')
 # # to check the datatype of the entered spy name
 # type(spy_name)
-# spy_salutation = raw_input("What should I call you Mr. or Ms. ?") #salutation for the spyname
+# spy_salutation = input("What should I call you Mr. or Ms. ?") #salutation for the spyname
 # print('Alright '+spy_salutation+'.'+spy_name+' I\'d like to know a little bit more about you...')
 
 # -------------------------------------------------------------------------------------------------
-# Code for lecture 2 of Spychat dated 21st March 2018
+# Code for lecture 2 of Spy Chat dated 21st March 2018
 # -------------------------------------------------------------------------------------------------
 from add_status import add_status_messages
 import spy_details
@@ -31,8 +28,8 @@ def start_chat(spy_name, spy_age, spy_rating):  # currently not using the parame
         while (menu_option<=6):
             if menu_option == 1:
                 print("You choose update the status ")
-                current_status_messesge = str(add_status_messages(current_status_messesge))
-                print("Your selected status is:" + current_status_messesge)
+                current_status_messesge = str(add_status_messages(current_status_messesge)) # calls the add_status_message from the add_status file
+                print("Your selected status is:" + current_status_messesge) #Displays the status chosen or entered by the spy
                 break
             elif menu_option == 2:
                 print("Adding a friend initiated......")
