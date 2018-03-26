@@ -17,7 +17,7 @@
 # -------------------------------------------------------------------------------------------------
 # Code for lecture 2 of Spychat dated 21st March 2018
 # -------------------------------------------------------------------------------------------------
-
+from add_status import status_message
 
 def start_chat(spy_name, spy_age, spy_rating):  # currently not using the parameters
     continue_option = "Y"
@@ -28,6 +28,7 @@ def start_chat(spy_name, spy_age, spy_rating):  # currently not using the parame
         while (menu_option<=6):
             if menu_option == 1:
                 print("Status update")
+                status_message()
                 break
             elif menu_option == 2:
                 print("Adding a friend initiated......")
