@@ -17,18 +17,22 @@
 # -------------------------------------------------------------------------------------------------
 # Code for lecture 2 of Spychat dated 21st March 2018
 # -------------------------------------------------------------------------------------------------
-from add_status import status_message
+from add_status import add_status_messages
+import spy_details
 
 def start_chat(spy_name, spy_age, spy_rating):  # currently not using the parameters
     continue_option = "Y"
     while (continue_option == 'Y' or continue_option == 'y'):
+        current_status_messesge = None
+        print("your current status is " + str(current_status_messesge))
         menu_option = int(input(
             "What would you like to do \n 1. Add a status update \n 2. Add a friend \n 3. Send a secret message \n 4. Read a secret message \n 5. Read chats from a user \n 6. Close the application"))
 
         while (menu_option<=6):
             if menu_option == 1:
-                print("Status update")
-                status_message()
+                print("You choose update the status ")
+                current_status_messesge = str(add_status_messages(current_status_messesge))
+                print("Your selected status is:" + current_status_messesge)
                 break
             elif menu_option == 2:
                 print("Adding a friend initiated......")
@@ -88,12 +92,12 @@ if user_option == "new":
 # for continuing as a default user
 # -----------------------------------------------------------------------------------------------------------------------
 elif user_option == 'default':
-    import spy_details
+
     print(
         'Authentication Complete. We are glad to have you with us. Welcome ' + spy_details.spy_salutation + '.' + spy_details.spy_name + ", Your sp rating is " + str(
             spy_details.spy_rating))  # float value to string value
     spy_is_online = True
 
-    start_chat(spy_details.spy_name,spy_details.spy_age,spy_details.spy_rating)  # calling menu option
+    start_chat(spy_details.spy_name, spy_details.spy_age, spy_details.spy_rating)  # calling menu option
 else:
     print("Please select default user or create a new one.")

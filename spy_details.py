@@ -3,11 +3,8 @@
 # user is given the option to continue as a default user or create a new spy user.
 #------------------------------------------------------------------------------------
 
-# default status
-current_status_message = None
-
 # list of default status
-STATUS_MESSAGES = ['My name is Princi.', 'Location: New Delhi']
+STATUS_MESSAGES = ['My name is Princi.', 'I love Python', 'Location: New Delhi']
 
 spy_name = 'Princi Sharma'
 spy_rating = 4.5
