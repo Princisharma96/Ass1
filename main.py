@@ -1,18 +1,6 @@
 
 # -------------------------------------------------------------------------------------------------
-# Code for lecture 1 of Spychat dated 19th March 2018
-# -------------------------------------------------------------------------------------------------
-# print('Welcome to Spy Chat')
-# print('Let\'s get started')
-# spy_name = input("What is your spy name?") #to store the name of the spy
-# print('Welcome '+spy_name+'. How are you?')
-# # to check the datatype of the entered spy name
-# type(spy_name)
-# spy_salutation = input("What should I call you Mr. or Ms. ?") #salutation for the spyname
-# print('Alright '+spy_salutation+'.'+spy_name+' I\'d like to know a little bit more about you...')
-
-# -------------------------------------------------------------------------------------------------
-# Code for lecture 2 of Spy Chat dated 21st March 2018
+# Code Till Module 4
 # -------------------------------------------------------------------------------------------------
 
 # import  is used take  details from spy_details file
@@ -76,6 +64,7 @@ def add_friend():
     # check total no of friends in a list.
     return len(friends)
 
+
 # add_status() function is use to add status like in whatsapp
 def add_status(current_status_message):
     if current_status_message !=None:
@@ -106,7 +95,8 @@ def add_status(current_status_message):
         return update_status_message
 
 
-def start_chat(spy_name, spy_age, spy_rating):  # currently not using the parameters
+#start_chat function inorder to show the menu to the user so that the user can select the desired function he wants to perform
+def start_chat(spy_name, spy_age, spy_rating):
     current_status_messesge = None
     print("your current status is " + str(current_status_messesge))
     continue_option = "Y"
@@ -114,6 +104,7 @@ def start_chat(spy_name, spy_age, spy_rating):  # currently not using the parame
 
         menu_option = int(input(
             "What would you like to do \n 1. Add a status update \n 2. Add a friend \n 3. Send a secret message \n 4. Read a secret message \n 5. Read chats from a user \n 6. Close the application"))
+
         # displaying menu for user.
         while (menu_option<=6):
             if menu_option == 1:
