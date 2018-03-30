@@ -7,6 +7,7 @@
 from spy_details import Spy, friends
 from spy_details import spy_1
 
+
 # list of default status
 STATUS_MESSAGES = ['My name is Princi.', 'I love Python', 'Location: New Delhi']
 
@@ -65,6 +66,23 @@ def add_friend():
     return len(friends)
 
 
+#function use to select one friend from many friends
+def select_a_friend():
+    item_position = 0
+    # showing the all friends from friends dictionary
+    for friend in friends:
+        print("%d. %s age: %s with ratting %.2f is online" %(item_position,friend.name,friend.age,friend.rating))
+        item_position=item_position+1
+    friend_choice=int(input("choose your friend"))
+    print("You selected %d index Friend" % friend_choice)
+    return friend_choice
+
+def send_a_message():
+    friend_choice = select_a_friend()
+
+#END Function to send message in SpyChat
+
+
 # add_status() function is use to add status like in whatsapp
 def add_status(current_status_message):
     if current_status_message !=None:
@@ -95,6 +113,7 @@ def add_status(current_status_message):
         return update_status_message
 
 
+
 #start_chat function inorder to show the menu to the user so that the user can select the desired function he wants to perform
 def start_chat(spy_name, spy_age, spy_rating):
     current_status_messesge = None
@@ -103,7 +122,7 @@ def start_chat(spy_name, spy_age, spy_rating):
     while (continue_option == 'Y' or continue_option == 'y'):
 
         menu_option = int(input(
-            "What would you like to do \n 1. Add a status update \n 2. Add a friend \n 3. Send a secret message \n 4. Read a secret message \n 5. Read chats from a user \n 6. Close the application"))
+            "What would you like to do \n 1. Add a status update \n 2. Add a friend \n 3. Send a message \n 4. Read a secret message \n 5. Read chats from a user \n 6. Close the application"))
 
         # displaying menu for user.
         while (menu_option<=6):
@@ -121,7 +140,8 @@ def start_chat(spy_name, spy_age, spy_rating):
                 print('You have %d friends' % number_of_friends) #prints the number of friends
                 break
             elif menu_option == 3:
-                print("Send a secret message initiated......")
+                print("Sending a  message initiated......")
+                send_a_message()
                 break
             elif menu_option == 4:
                 print("Read a secret message initiated......")
