@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bc3b955-3be9-4ccd-9fa0-a057047feab2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Ass1.iml" afterPath="$PROJECT_DIR$/.idea/Ass1.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
       <change beforePath="$PROJECT_DIR$/spy_details.py" afterPath="$PROJECT_DIR$/spy_details.py" />
@@ -17,23 +15,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="spy_details.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="spy_details.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spy_details.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="20" column="30" lean-forward="true" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+            <state relative-caret-position="459">
+              <caret line="27" column="35" lean-forward="false" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="245" column="120" lean-forward="true" selection-start-line="245" selection-start-column="120" selection-end-line="245" selection-end-column="120" />
+            <state relative-caret-position="550">
+              <caret line="247" column="0" lean-forward="true" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
               <folding>
-                <element signature="e#321#377#0" expanded="true" />
+                <element signature="e#321#370#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -215,6 +213,24 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/spy_details.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4165">
+          <caret line="245" column="120" lean-forward="true" selection-start-line="245" selection-start-column="120" selection-end-line="245" selection-end-column="120" />
+          <folding>
+            <element signature="e#321#370#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spy_details.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="48" lean-forward="false" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
           <folding />
@@ -226,7 +242,7 @@
         <state relative-caret-position="3995">
           <caret line="235" column="120" lean-forward="true" selection-start-line="235" selection-start-column="120" selection-end-line="235" selection-end-column="120" />
           <folding>
-            <element signature="e#321#377#0" expanded="true" />
+            <element signature="e#321#370#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -244,7 +260,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#321#377#0" expanded="true" />
+            <element signature="e#321#370#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -262,7 +278,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#321#377#0" expanded="true" />
+            <element signature="e#321#370#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -280,7 +296,7 @@
         <state relative-caret-position="3145">
           <caret line="185" column="0" lean-forward="true" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
           <folding>
-            <element signature="e#321#377#0" expanded="true" />
+            <element signature="e#321#370#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -298,7 +314,7 @@
         <state relative-caret-position="2601">
           <caret line="153" column="45" lean-forward="true" selection-start-line="153" selection-start-column="45" selection-end-line="153" selection-end-column="45" />
           <folding>
-            <element signature="e#321#377#0" expanded="true" />
+            <element signature="e#321#370#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -316,7 +332,7 @@
         <state relative-caret-position="731">
           <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding>
-            <element signature="e#321#377#0" expanded="true" />
+            <element signature="e#321#370#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -335,7 +351,7 @@
         <state relative-caret-position="1700">
           <caret line="100" column="0" lean-forward="true" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
           <folding>
-            <element signature="e#321#377#0" expanded="true" />
+            <element signature="e#321#370#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -348,21 +364,21 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/spy_details.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="245" column="120" lean-forward="true" selection-start-line="245" selection-start-column="120" selection-end-line="245" selection-end-column="120" />
-          <folding>
-            <element signature="e#321#377#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="459">
+          <caret line="27" column="35" lean-forward="false" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spy_details.py">
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="20" column="30" lean-forward="true" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-          <folding />
+        <state relative-caret-position="550">
+          <caret line="247" column="0" lean-forward="true" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
+          <folding>
+            <element signature="e#321#370#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

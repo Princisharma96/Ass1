@@ -4,7 +4,8 @@
 # -----------------------------------------------------------------------------------------------------------------------
 
 # import  is used take  details from spy_details file
-from spy_details import Spy, friends ,ChatMessage ,spy_1
+from spy_details import Spy, friends ,ChatMessage
+from spy_details import spy_1
 from steganography.steganography import Steganography
 from datetime import datetime
 
@@ -243,4 +244,4 @@ elif user_option == 'Y' or user_option == 'y':
     start_chat(spy_1.name, spy_1.age, spy_1.rating)  # calling menu option
 else:
     print("Please select default user or create a new one.")
-# ----------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------
