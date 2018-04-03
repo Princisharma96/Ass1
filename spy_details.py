@@ -5,6 +5,8 @@
 
 from datetime import datetime
 
+
+# creating class
 class Spy:
     def __init__(self,name,salutation,age,rating):
         self.name= name
@@ -22,10 +24,14 @@ class ChatMessage:
         self.time = datetime.now()
         self.sent_by_me = sent_by_me
 
+
+# define spy_name, age, rating)
 spy_1=Spy('Princi Sharma','Ms',20,4.3)
 
+# details of existing friends
 friend_one=Spy('Princi','Ms',20,5.1)
-friend_two=Spy('Ujjwal','Mr',22,3.2)
+friend_two=Spy('Ujjwal','Mr',22,3.5)
 friend_three=Spy('Vivek','Mr',21,4.5)
 
+# lists of friends
 friends=[friend_one,friend_two,friend_three]
