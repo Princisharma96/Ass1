@@ -15,7 +15,7 @@ STATUS_MESSAGES = ['My name is Princi.', 'I love Python', 'Location: New Delhi']
 # -----------------------------------------------------------------------------------------------------------------------
 #add_friend() function is use to add frinds
 def add_friend():
-    # using class user in spy_details
+    # using class user in spy_details7060883183
     new_friend = Spy(" ", " ", 0, 0.0)
 
     # ask user for name
@@ -86,18 +86,24 @@ def select_a_friend():
 #START Function to send message in SpyChat
 def send_a_message():
     friend_choice = select_a_friend()
+
     original_image = raw_input("What is the name of the image?")
     output_path = 'output.jpg'
     text = raw_input("What do you want to say?")
     Steganography.encode(original_image, output_path, text)
-    # function for a new chat
-    new_chat = {
-        "message": text,
-        "time": datetime.now(),
-        "sent_by_me": True
-    }
+
+    # the message will be stored in chat message class
+    new_chat = ChatMessage(text, True)
+
+    # along the name of friend with whom we add message
     friends[friend_choice].chats.append(new_chat)
-    print "Your secret message image is ready!"
+
+    # Successful message after encoding
+    print("Your message encrypted successfully.")
+
+    # name of the friend along which we add message.
+    friends[friend_choice].chats.append(new_chat)
+    print("your secret message is ready.")
 # -----------------------------------------------------------------------------------------------------------------------
 
 
@@ -105,16 +111,15 @@ def send_a_message():
 #START Function to read message in SpyChat
 def read_a_message():
     sender = select_a_friend()
+
     output_path = raw_input("What is the name of the file?")
     secret_text = Steganography.decode(output_path)
-    new_chat = {
-        "message": secret_text,
-        "time": datetime.now(),
-        "sent_by_me": False
-    }
+    print(secret_text)
+
+    # add the chat to sender
+    new_chat = ChatMessage(secret_text, False)
     friends[sender].chats.append(new_chat)
-    print "Your Secret message is "+secret_text
-    print "Your secret message has been saved!"
+    print("Your secret message has been saved.")
 
 #END Function to read message in SpyChat
 # -----------------------------------------------------------------------------------------------------------------------
