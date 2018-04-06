@@ -1,19 +1,25 @@
 
 # -----------------------------------------------------------------------------------------------------------------------
-# Code Till Module 4
-# -----------------------------------------------------------------------------------------------------------------------
+# Code Till Module 8
+#  -----------------------------------------------------------------------------------------------------------------------
 
 # import  is used take  details from spy_details file
-from spy_details import Spy, friends ,ChatMessage
+from spy_details import Spy, friends ,ChatMessage ,chats
 from spy_details import spy_1
 from steganography.steganography import Steganography
 from datetime import datetime
+import csv
+
+
+
+# -----------------------------------------------------------------------------------------------------------------------
 
 # list of default status
 STATUS_MESSAGES = ['My name is Princi.', 'I love Python', 'Location: New Delhi']
+# list of default status
 
-# -----------------------------------------------------------------------------------------------------------------------
-#add_friend() function is use to add frinds
+#------------------------------------------------------------------------------------------------------------------------
+# #add_friend() function is use to add friends
 def add_friend():
     # using class user in spy_details7060883183
     new_friend = Spy(" ", " ", 0, 0.0)
@@ -63,6 +69,10 @@ def add_friend():
     # add friend if all conditions check
     friends.append(new_friend)
     print('Friend Added!')
+    with open("friends.csv", "a") as friends_data:
+        writer = csv.writer(friends_data)
+        writer.writerow([new_friend.name, new_friend.salutation, new_friend.age, new_friend.rating, new_friend.is_online])
+
     # check total no of friends in a list.
     return len(friends)
 # -----------------------------------------------------------------------------------------------------------------------
@@ -71,7 +81,7 @@ def add_friend():
 # -----------------------------------------------------------------------------------------------------------------------
 #function use to select one friend from many friends
 def select_a_friend():
-    item_position = 0
+    item_position = 1
     # showing the all friends from friends dictionary
     for friend in friends:
         print("%d. %s age: %s with ratting %.2f is online" %(item_position,friend.name,friend.age,friend.rating))
@@ -85,7 +95,7 @@ def select_a_friend():
 # -----------------------------------------------------------------------------------------------------------------------
 #START Function to send message in SpyChat
 def send_a_message():
-    friend_choice = select_a_friend()
+    friend_choice = friends[select_a_friend()].name
 
     original_image = raw_input("What is the name of the image?")
     output_path = 'output.jpg'
@@ -93,17 +103,17 @@ def send_a_message():
     Steganography.encode(original_image, output_path, text)
 
     # the message will be stored in chat message class
-    new_chat = ChatMessage(text, True)
-
-    # along the name of friend with whom we add message
-    friends[friend_choice].chats.append(new_chat)
-
-    # Successful message after encoding
-    print("Your message encrypted successfully.")
+    new_chat = ChatMessage(spy_name=spy_1.name, friend_name=friend_choice, time=datetime.now().strftime("%d %B %Y"), message=text)
 
     # name of the friend along which we add message.
-    friends[friend_choice].chats.append(new_chat)
+    chats.append(new_chat)
     print("your secret message is ready.")
+
+    with open('chats.csv', 'a') as chats_data:
+        writer = csv.writer(chats_data)
+        writer.writerow([new_chat.spy_name, new_chat.friend_name, new_chat.time, new_chat.message])
+
+
 # -----------------------------------------------------------------------------------------------------------------------
 
 
@@ -117,13 +127,31 @@ def read_a_message():
     print(secret_text)
 
     # add the chat to sender
-    new_chat = ChatMessage(secret_text, False)
-    friends[sender].chats.append(new_chat)
+    chat = ChatMessage(spy_name=spy_1.name, friend_name=sender, time=datetime.now().strftime("%d %B %Y"), message=secret_text)
+    friends[sender].chats.append(chat)
     print("Your secret message has been saved.")
+    # writing chats in chats.csv
+    with open("chats.csv", 'a') as chat_record:
+        writer = csv.writer(chat_record)
+        writer.writerow([chat.spy_name, chat.friend_name, chat.time, chat.message])
 
 #END Function to read message in SpyChat
 # -----------------------------------------------------------------------------------------------------------------------
-
+  # Function to read chats
+def readchat(choice):
+    name_friend = friends[choice].name
+    with open('Chats.csv', 'rU') as chats_data:
+        reader = csv.reader(chats_data)
+        for row in reader:
+            try:
+                c = ChatMessage(spy_name=row[0], friend_name=row[1], time=row[2], message=row[3])
+                # checking the chats of the current spy with selected friend
+                if c.spy_name == spy_1.name and c.friend_name == name_friend:
+                    print(" You sent message to %s on [%s] : %s" % (name_friend, c.time, c.message))
+                    return 1
+            except IndexError:
+                pass
+            continue
 
 # -----------------------------------------------------------------------------------------------------------------------
 #  add_status() function is use to add status like in whatsapp
@@ -162,7 +190,36 @@ def add_status(current_status_message):
 def start_chat(spy_name, spy_age, spy_rating):
     current_status_messesge = None
     print("your current status is " + str(current_status_messesge))
+
+    # load_friends() is a function which loads all the friends stored in friends.csv
+    def load_friends():
+        with open('friends.csv', 'rU') as friends_data:
+            reader = csv.reader(friends_data)
+            for row in reader:
+                try:
+                    friends.append(Spy(name=row[0], salutation=(row[1]), age=int(row[2]), rating=float(row[3])))
+                except IndexError:
+                    pass
+                continue
+
+    # load_chats() is a function which loads all the chats of spies stored in chats.csv
+    def load_chats():
+        with open("chats.csv", 'rU') as chat_data:
+            reader = csv.reader(chat_data)
+            for row in reader:
+                try:
+                    chats.append(ChatMessage(spy_name=row[0], friend_name=row[1], time=row[2], message=row[3]))
+                except IndexError:
+                    pass
+                continue
+
+
+    # both functions are called so that chats and list of friends are loaded before its usage
+    load_friends()
+    load_chats()
+
     continue_option = "Y"
+
     while (continue_option == 'Y' or continue_option == 'y'):
 
         menu_option = int(raw_input(
@@ -193,6 +250,9 @@ def start_chat(spy_name, spy_age, spy_rating):
                 break
             elif menu_option == 5:
                 print("Reading chat from user")
+                print "select a friend whose chat you want to see"
+                choice = select_a_friend()
+                readchat(choice)
                 break
             elif menu_option ==6:
                 print("Exiting now.....")
