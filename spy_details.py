@@ -5,7 +5,7 @@
 
 from datetime import datetime
 import csv
-
+from termcolor import colored
 # creating class
 class Spy:
     def __init__(self,name,salutation,age,rating):

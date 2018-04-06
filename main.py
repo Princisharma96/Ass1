@@ -1,6 +1,6 @@
 
 # -----------------------------------------------------------------------------------------------------------------------
-# Code Till Module 8
+# Spy chat
 #  -----------------------------------------------------------------------------------------------------------------------
 
 # import  is used take  details from spy_details file
@@ -8,9 +8,8 @@ from spy_details import Spy, friends ,ChatMessage ,chats
 from spy_details import spy_1
 from steganography.steganography import Steganography
 from datetime import datetime
+from termcolor import colored
 import csv
-
-
 
 # -----------------------------------------------------------------------------------------------------------------------
 
@@ -54,7 +53,7 @@ def add_friend():
     if 12 < new_friend.age < 50:
         True
     else:
-        print("Age should be in between 12 to 50")
+        print colored("Age should be in between 12 to 50","red")
         return add_friend()
 
     #ask for rating of friend, using float
@@ -89,9 +88,12 @@ def select_a_friend():
     friend_choice=int(raw_input("choose your friend"))
     friend_choice_position=friend_choice-1
     return friend_choice_position
+#------------------------------------------------------------------------------------------------------------------------
+
 # -----------------------------------------------------------------------------------------------------------------------
 
-
+special_words = ['SAVE ME', 'SOS' , 'HELP']
+#if the message contains these special words it displays an appropriate message
 # -----------------------------------------------------------------------------------------------------------------------
 #START Function to send message in SpyChat
 def send_a_message():
@@ -100,6 +102,9 @@ def send_a_message():
     original_image = raw_input("What is the name of the image?")
     output_path = 'output.jpg'
     text = raw_input("What do you want to say?")
+    if text in special_words:
+        text = colored(text + ": IT'S EMMERGENCY!!", "red")
+    #encoding the message
     Steganography.encode(original_image, output_path, text)
 
     # the message will be stored in chat message class
@@ -147,7 +152,9 @@ def readchat(choice):
                 c = ChatMessage(spy_name=row[0], friend_name=row[1], time=row[2], message=row[3])
                 # checking the chats of the current spy with selected friend
                 if c.spy_name == spy_1.name and c.friend_name == name_friend:
-                    print(" You sent message to %s on [%s] : %s" % (name_friend, c.time, c.message))
+                    print colored("You sent message to the Spy name: %s "%name_friend,"red")
+                    print colored("On Time: [%s]"%c.time,"blue")
+                    print("Message: %s"% c.message)
                     return 1
             except IndexError:
                 pass
@@ -159,7 +166,7 @@ def add_status(current_status_message):
     if current_status_message !=None:
         print("your current status is:"+current_status_message)
     else:
-        print("you don't have any current messeage")
+        print colored("you don't have any current messeage","red")
     question=raw_input("do you want to select status from old status? y/n")
     # if user want to add new status
     # then append new_status to STATUS_MESSAGE
@@ -180,7 +187,7 @@ def add_status(current_status_message):
         if len(STATUS_MESSAGES)>message_selection:
             update_status_message=STATUS_MESSAGES[message_selection]
         else:
-            print("selected message is not in older status ")
+            print colored("selected message is not in older status ", "red")
         return update_status_message
 # -----------------------------------------------------------------------------------------------------------------------
 
@@ -232,7 +239,7 @@ def start_chat(spy_name, spy_age, spy_rating):
 
                 current_status_messesge = str(add_status(current_status_messesge))
                 # calls the add_status_message from the add_status file
-                print("Your selected status is:" +current_status_messesge) #Displays the status chosen or entered by the spy
+                print colored("Your selected status is:" +current_status_messesge,"blue") #Displays the status chosen or entered by the spy
                 break
             elif menu_option == 2:
                 print("Adding a friend initiated......")
@@ -302,11 +309,11 @@ if user_option == 'N' or user_option == 'n' :
 # -----------------------------------------------------------------------------------------------------------------------
 elif user_option == 'Y' or user_option == 'y':
 
-    print(
-        'Authentication Complete. We are glad to have you with us. Welcome ' + spy_1.salutation + '.' + spy_1.name + ", Your spy rating is " + str(spy_1.rating))  # float value to string value
+    print colored(
+        'Authentication Complete. We are glad to have you with us. Welcome ' + spy_1.salutation + '.' + spy_1.name + ", Your spy rating is " + str(spy_1.rating),"blue")  # float value to string value
     spy_is_online = True
 
     start_chat(spy_1.name, spy_1.age, spy_1.rating)  # calling menu option
 else:
-    print("Please select default user or create a new one.")
+    print colored("Please select default user or create a new one.","red")
 # -----------------------------------------------------------------------------------------------------------------------
